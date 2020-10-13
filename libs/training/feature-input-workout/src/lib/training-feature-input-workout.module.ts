@@ -26,6 +26,7 @@ import { ProgramPage } from './pages/program/program.page';
 import { ProgramsPage } from './pages/programs/programs.page';
 import { WeeksPage } from './pages/weeks/weeks.page';
 import { StatisticsContainer } from './containers/statistics/statistics.container';
+import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
 
 @NgModule({
   imports: [
@@ -58,6 +59,7 @@ import { StatisticsContainer } from './containers/statistics/statistics.containe
     ProgramsPage,
     WeeksPage,
     StatisticsContainer,
+    BreadcrumbsComponent,
   ],
   exports: [],
 })
