@@ -1,11 +1,58 @@
-#header {
-    text-align: center;
-    background-color: purple;
+@import 'utils';
+
+header {
+  padding: 20px;
+  border-bottom: 1px dotted black;
 }
 
-li {
-    list-style-type: none;
-    text-align: center;
-    padding: 10px;
-    border: 1px solid black;
+#header {
+  @include title;
+}
+
+.icon-container {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  border: 1px solid #aaa;
+  border-radius: $size-border-l;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: $size-border-l;
+}
+
+tr {
+  display: flex;
+}
+
+td,
+th {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header,
+.cell {
+  @include data-point;
+  &__name {
+    width: 75px;
+  }
+
+  &__none {
+    width: 200px;
+  }
+
+  &__followers {
+    width: 125px;
+  }
+
+  &__engagement {
+    width: 200px;
+  }
 }

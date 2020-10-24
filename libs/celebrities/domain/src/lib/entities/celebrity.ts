@@ -7,4 +7,5 @@ export interface Celebrity {
   instagramIds?: string[];
   fitnessApplications?: string[];
   engagementRate?: number;
+  photoUrl?: string;
 }

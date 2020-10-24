@@ -22,12 +22,13 @@ export class DisplayTopTenComponent implements OnInit {
   getCelebrities(): void {
     this.celebs$ = this.getCelebritiesService.getAll().pipe(
       map((data) => {
+        console.log(data);
         const records = data.records;
         const celebrities: Celebrity[] = records
-          .filter((record) => record.fields.Name)
-          .map((record) => {
-            return { name: record.fields.Name, followers: 100 };
-          });
+          .filter((record) => record.fields.name)
+          .map((record) => record.fields)
+          .slice(0, 10);
+
         return celebrities;
       })
     );

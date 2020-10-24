@@ -1,6 +1,39 @@
-<h1 id="header">Celebrities Works!</h1>
+<header>
+  <h1 id="header">Top 10 Athletes</h1>
+</header>
 <ul class="celebList">
-    <li *ngFor="let celeb of (celebs$ | async)">
-      <span>Name: {{celeb.name}} <br> Followers:{{celeb.followers}}</span>
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <th class="header__name">Name</th>
+      <th class="header__none"></th>
+      <th class="header__followers">Followers</th>
+      <th class="header__engagement">Engagement Rate</th>
+    </tr>
+    <tr *ngFor="let celeb of celebs$ | async">
+      <td class="cell__name">
+        <div class="icon-container">
+          <img
+            *ngIf="celeb.photoUrl; else bicepEmoji"
+            [src]="celeb.photoUrl"
+            [alt]="celeb.name"
+          />
+        </div>
+      </td>
+      <td class="cell__none">
+        <a target="__blank" [href]="celeb.instagramUrl">{{ celeb.name }}</a>
+      </td>
+      <td class="cell__followers">
+        <span>{{ celeb.followers }}</span>
+      </td>
+      <td class="cell__engagement">
+        <span>{{ celeb.engagementRate }}</span>
+      </td>
+    </tr>
+  </table>
+</ul>
+
+<ng-template #bicepEmoji>
+  <div class="icon-container">
+    💪
+  </div>
+</ng-template>
